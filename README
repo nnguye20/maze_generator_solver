@@ -1,0 +1,25 @@
+README: maze
+
+BUGS: No known bugs
+
+OVERVIEW: I basically followed the exact guidelines of the handout and pseudocode:
+
+./generator takes in a file to write to, constructs a maze represented by an array of maze_room structs, and constructs
+walls/connections recursively via drunken_walk(). The connections of each maze_room are then converted to hexidecimal values
+via encode_maze (which calls encode_room on each room), and these values are transcribed to the file mentioned before via
+fprintf().
+
+./solver takes in a file to read and a file to write to, reconstructs the maze back to its program representation via
+fscanf() and create_room_connections(). Then, it finds a path from the passed in starting row/col to the goal row/col via
+dfs() recursively. Choosing the macro FULL enables ./solver to print out the index of every room visited in finding
+the path to the goal. Disabling the macro FULL enables ./solver, after running dfs(), to print out the index of each
+room in the direct path to the goal via next pointers of each maze_room struct (which were filled in previously in dfs()).
+
+
+
+NOTABLE DESIGN CHOICES:
+
+1) I chose to have an array represent the connections of each maze_room struct, where index
+(0, 1, 2, 3) represents the connection to the (NORTH, SOUTH, WEST, EAST) neighbor respectively.
+To keep the theme consistent, I traversed through each direction in the exact same order (refer to
+for loop at line 94) in dfs().
