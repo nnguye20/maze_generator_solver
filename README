@@ -2,7 +2,7 @@ README: maze
 
 BUGS: No known bugs
 
-OVERVIEW: I basically followed the exact guidelines of the handout and pseudocode:
+OVERVIEW:
 
 ./generator takes in a file to write to, constructs a maze represented by an array of maze_room structs, and constructs
 walls/connections recursively via drunken_walk(). The connections of each maze_room are then converted to hexidecimal values
