@@ -41,14 +41,12 @@ int is_in_range(int row, int col, int num_rows, int num_cols) {
 struct maze_room *get_neighbor(int num_rows, int num_cols,
                                struct maze_room maze[num_rows][num_cols],
                                struct maze_room *room, Direction dir) {
-    // Needed? Place elsewhere?
+
     assert(is_in_range(room->row, room->col, num_rows, num_cols));
 
     int newRow = room->row;
     int newCol = room->col;
-    // WHAT IF NEIGHBORING ROOM OUT OF RANGE? // WHAT IF NO CONNECTION?
-    // INITIALIZE MAZE ARRAY TO ALL ZEROS in generator?
-    // I could, in drunken, make neighbor and get row/col using pointers, but..
+
     if (dir == NORTH) {
         newRow--;
     } else if (dir == EAST) {
@@ -60,5 +58,4 @@ struct maze_room *get_neighbor(int num_rows, int num_cols,
     }
 
     return &maze[newRow][newCol];
-    // Fill in this function
 }
