@@ -16,10 +16,6 @@
  *WEST. This means that every connection in maze[3][4] should be set to 1,
  *except the WEST connection, which should be set to 0.
  *
- * See the handout for more details about our hexadecimal representation, as
- *well as examples on how to use bit masks to extract information from this
- *hexadecimal representation.
- *
  * Parameters:
  *	- room: pointer to the current room
  *	- hex: hexadecimal integer (between 0-15 inclusive) that represents the
@@ -51,10 +47,6 @@ void create_room_connections(struct maze_room *room, unsigned int hex) {
  * This function should also print out either every visited room as it goes, or
  * the final pruned solution, depending on whether the FULL macro is set.
  *
- * Note that you may need to add extra parameters to this function's signature,
- * depending on how you choose to store the pruned solution.
- *
- * See handout for more details, as well as a pseudocode implementation.
  *
  * Parameters:
  *	- row: row of the current room
